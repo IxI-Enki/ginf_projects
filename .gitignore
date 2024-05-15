@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/tic_tac_toe/TicTacToe.Logic/obj/Debug/net8.0
+/tic_tac_toe/TicTacToe.Logic/bin/Debug/net8.0
+/tic_tac_toe/TicTacToe.Logic/.vs/TicTacToe.Logic
+/.vs
