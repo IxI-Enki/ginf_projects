@@ -37,6 +37,7 @@ namespace Projects
 {
   class Program
   {
+    static bool[,] playerChoices = new bool[3, 3];
     static void Main()
     {
       Console.OutputEncoding = Encoding.UTF8;
@@ -53,10 +54,10 @@ namespace Projects
     private static void RunTicTacToe()
     {
       bool run = true,
-           togglePlayer;
+           togglePlayer = true;
 
-      byte[] playerScores
-        = new byte[2];
+      bool[] chosen
+        = new bool[10];
       byte cursorPos = 5;
       // 1 2 3
       // 4 5 6
@@ -64,9 +65,10 @@ namespace Projects
       do
         CurserLogic
           (
+          ref togglePlayer,
           ref cursorPos,
           ref run,
-          ref playerScores
+          ref chosen
           );
       while (run);
       // PrintResult();
@@ -80,9 +82,10 @@ namespace Projects
     #region cursor
     static void CurserLogic
       (
+      ref bool togglePlayer,
       ref byte cursorPos,
       ref bool run,
-      ref byte[] playerScores
+      ref bool[] chosen
       )
     {
       if (Console.KeyAvailable)
@@ -156,7 +159,7 @@ namespace Projects
             break;
           //  -  -  -  -  -ENTER-  -  -  -  - 
           case ConsoleKey.Enter:
-            UpdateScore(ref playerScores);
+            UpdateScore(cursorPos, ref chosen, ref togglePlayer, ref run);
             break;
           //  -  -  -  -  - ESC -  -  -  -  - 
           case ConsoleKey.Escape:
@@ -167,37 +170,73 @@ namespace Projects
       PrintCursor(cursorPos);
     }
 
-    private static void UpdateScore(ref byte[] playerScores)
+    private static void UpdateScore(byte cursorPos, ref bool[] chosen, ref bool togglePlayer, ref bool run)
     {
-      throw new NotImplementedException();
+      int w = 0, h = 0;
+      switch (cursorPos)
+      {
+        case 1:
+          w = 3; h = 3; break;
+        case 2:
+          w = 7; h = 3; break;
+        case 3:
+          w = 11; h = 3; break;
+        case 4:
+          w = 3; h = 5; break;
+        case 5:
+          w = 7; h = 5; break;
+        case 6:
+          w = 11; h = 5; break;
+        case 7:
+          w = 3; h = 7; break;
+        case 8:
+          w = 7; h = 7; break;
+        case 9:
+          w = 11; h = 7; break;
+      }
+      Console.SetCursorPosition(w, h);
+
+      if (!chosen[cursorPos])
+      {
+        chosen[cursorPos] = true;
+        Console.Write(ColoredString("X", togglePlayer ? "255;0;0" : "0;255;0"));
+    //    AddScore(togglePlayer, chosen[cursorPos]);
+        togglePlayer = !togglePlayer ? true : false;
+      }
+      CheckScore(ref run);
+    }
+
+    private static void CheckScore(ref bool run)
+    {
+
     }
 
     private static void PrintCursor
       (
-      byte cursorPos, 
+      byte cursorPos,
       byte delete = 0
       )
     {
       int w = 0, h = 0;
       switch (cursorPos)
       {
-        case 1: 
+        case 1:
           w = 2; h = 3; break;
-        case 2: 
+        case 2:
           w = 6; h = 3; break;
-        case 3: 
+        case 3:
           w = 10; h = 3; break;
-        case 4: 
+        case 4:
           w = 2; h = 5; break;
-        case 5: 
+        case 5:
           w = 6; h = 5; break;
-        case 6: 
+        case 6:
           w = 10; h = 5; break;
-        case 7: 
+        case 7:
           w = 2; h = 7; break;
-        case 8: 
+        case 8:
           w = 6; h = 7; break;
-        case 9: 
+        case 9:
           w = 10; h = 7; break;
       }
       Console.SetCursorPosition
@@ -214,14 +253,14 @@ namespace Projects
     #endregion cursor
 
     #region playfield
-    static string ConcatField(string[] playfieldLines) 
+    static string ConcatField(string[] playfieldLines)
       => string.Join("\n", Playfield());
     static string[] Playfield()
     {
       int width = 12,
           height = 6;
 
-      string[] playfieldLines 
+      string[] playfieldLines
         = new string[height + 1];
 
       for (int h = 0; h <= height; h++)
