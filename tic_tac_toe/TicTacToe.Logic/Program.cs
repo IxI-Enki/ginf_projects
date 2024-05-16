@@ -57,20 +57,114 @@ namespace Projects
 
       byte[] playerScores = new byte[2];
       byte cursorPos = 5;
-
+      // 1 2 3
+      // 4 5 6
+      // 7 8 9
       do
       {
-        CurserLogic(cursorPos, ref run, ref playerScores);
+        CurserLogic(ref cursorPos, ref run, ref playerScores);
 
       } while (run);
+      // PrintResult();
     }
 
-    static void CurserLogic(int cursorPos, ref bool run, ref byte[] playerScores)
+    static void CurserLogic(ref byte cursorPos, ref bool run, ref byte[] playerScores)
     {
-      Console.SetCursorPosition(cursorPos == 5 ? 6 : 1, 5);
-      Console.Write(Cursor[0]);
+      if (Console.KeyAvailable)
+      {
+        ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+        PrintCursor(cursorPos, 1);
+
+        switch (keyInfo.Key)
+        {
+          //  -  -  -  -  - ↑↑↑ -  -  -  -  -  
+          case ConsoleKey.UpArrow:
+            {
+              cursorPos = cursorPos == 1 ? (byte)7
+                : cursorPos == 2 ? (byte)8
+                : cursorPos == 3 ? (byte)9
+                : cursorPos == 4 ? (byte)1
+                : cursorPos == 5 ? (byte)2
+                : cursorPos == 6 ? (byte)3
+                : cursorPos == 7 ? (byte)4
+                : cursorPos == 8 ? (byte)5 : (byte)6;
+            }
+            break;
+          //  -  -  -  -  - ↓↓↓ -  -  -  -  -  
+          case ConsoleKey.DownArrow:
+            {
+              cursorPos = cursorPos == 1 ? (byte)4
+                : cursorPos == 2 ? (byte)5
+                : cursorPos == 3 ? (byte)6
+                : cursorPos == 4 ? (byte)7
+                : cursorPos == 5 ? (byte)8
+                : cursorPos == 6 ? (byte)9
+                : cursorPos == 7 ? (byte)1
+                : cursorPos == 8 ? (byte)2 : (byte)3;
+            }
+            break;
+          //  -  -  -  -  - <--- -  -  -  -  -  
+          case ConsoleKey.LeftArrow:
+            {
+              cursorPos = cursorPos == 1 ? (byte)3
+                : cursorPos == 2 ? (byte)1
+                : cursorPos == 3 ? (byte)2
+                : cursorPos == 4 ? (byte)6
+                : cursorPos == 5 ? (byte)4
+                : cursorPos == 6 ? (byte)5
+                : cursorPos == 7 ? (byte)9
+                : cursorPos == 8 ? (byte)7 : (byte)8;
+            }
+            break;
+          //  -  -  -  -  - --> -  -  -  -  -  
+          case ConsoleKey.RightArrow:
+            {
+              cursorPos = cursorPos == 1 ? (byte)2
+                : cursorPos == 2 ? (byte)3
+                : cursorPos == 3 ? (byte)1
+                : cursorPos == 4 ? (byte)5
+                : cursorPos == 5 ? (byte)6
+                : cursorPos == 6 ? (byte)4
+                : cursorPos == 7 ? (byte)8
+                : cursorPos == 8 ? (byte)9 : (byte)7;
+            }
+            break;
+          //  -  -  -  -  -ENTER-  -  -  -  - 
+          case ConsoleKey.Enter:
+
+            break;
+          //  -  -  -  -  - ESC -  -  -  -  - 
+          case ConsoleKey.Escape:
+            run = false;
+            return;
+        }
+      }
+      PrintCursor(cursorPos);
     }
+
+    private static void PrintCursor(byte cursorPos, byte delete = 0)
+    {
+      int w = 0, h = 0;
+      switch (cursorPos)
+      {
+        case 1: w = 2; h = 3; break;
+        case 2: w = 6; h = 3; break;
+        case 3: w = 10; h = 3; break;
+        case 4: w = 2; h = 5; break;
+        case 5: w = 6; h = 5; break;
+        case 6: w = 10; h = 5; break;
+        case 7: w = 2; h = 7; break;
+        case 8: w = 6; h = 7; break;
+        case 9: w = 10; h = 7; break;
+      }
+      Console.SetCursorPosition(w, h);
+      Console.Write(delete == 1 ? Del[0] : Cursor[0]);
+      Console.SetCursorPosition(w + 2, h);
+      Console.Write(delete == 1 ? Del[1] : Cursor[1]);
+    }
+
     static char[] Cursor = ['▶', '◀'];  // ▶▷▸▹◀◁◂◃
+    static char[] Del = [' ', ' '];  // ▶▷▸▹◀◁◂◃
 
     static string Header
       =>
