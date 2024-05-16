@@ -7,6 +7,6 @@ Ten "easy" C# Programs
 - Tamagochi  
 - Game of Life  
 - Lambda Emoji  
--  
--  
--  
+- Simple Menu  
+- Simple Box  
+- Not Simple (OO)  
