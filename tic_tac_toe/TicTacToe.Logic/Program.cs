@@ -40,11 +40,44 @@ namespace Projects
     static void Main()
     {
       Console.OutputEncoding = Encoding.UTF8;
+
+      Console.CursorVisible = false;
+
       Console.Write("\n " + Header);
 
       Console.Write("\n" + ColoredString(ConcatField(Playfield()), "55;255;66"));
+
+      RunTicTacToe();
     }
 
+    private static void RunTicTacToe()
+    {
+      bool run = true,
+           togglePlayer;
+
+      byte[] playerScores = new byte[2];
+      byte cursorPos = 5;
+
+      do
+      {
+        CurserLogic(cursorPos, ref run, ref playerScores);
+
+      } while (run);
+    }
+
+    static void CurserLogic(int cursorPos, ref bool run, ref byte[] playerScores)
+    {
+      Console.SetCursorPosition(cursorPos == 5 ? 6 : 1, 5);
+      Console.Write(Cursor[0]);
+    }
+    static char[] Cursor = ['▶', '◀'];  // ▶▷▸▹◀◁◂◃
+
+    static string Header
+      =>
+        ColoredString(" Tic", "40;40;255")
+      + ColoredString(" Tac", "255;40;40")
+      + ColoredString(" Toe", "40;255;40");
+    #region playfield
     static string ConcatField(string[] playfieldLines) => string.Join("\n", Playfield());
     static string[] Playfield()
     {
@@ -106,16 +139,9 @@ namespace Projects
     static char[] PlayfieldChars
       = ['┌', '╌', '╥', '┐', '┊', '╞', '╡', '═', '║', '╬', '└', '╨', '┘'],
       pC = PlayfieldChars;
-
-    static char[] Cursor = ['▶', '◀'];
-    // ▶▷▸▹◀◁◂◃
-    static string Header
-      =>
-        ColoredString(" Tic", "40;40;255")
-      + ColoredString(" Tac", "255;40;40")
-      + ColoredString(" Toe", "40;255;40");
-
+    #endregion playfield
     // (☞ﾟヮﾟ)☞   Easy setup for colored strings   ☜(ﾟヮﾟ☜)
+    #region string coloring
     static string AnsiEsc = "\u001b[",
                   Foreground = "3",
                   Background = "4",
@@ -126,7 +152,6 @@ namespace Projects
                 Blue = 255;
     static byte[] RGBValues = [Red, Green, Blue];
     static string RGBString => string.Join(';', RGBValues);
-
     static string ColoredString(string toColor, string rgbString = "255;255;255", bool foreground = true)
           => AnsiEsc
           + (foreground ? Foreground : Background)
@@ -135,5 +160,6 @@ namespace Projects
           + 'm'
           + toColor
           + Reset;
+    #endregion string coloring
   }
 }
