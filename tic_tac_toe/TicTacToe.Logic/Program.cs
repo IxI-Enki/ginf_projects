@@ -31,16 +31,84 @@
 
 #endregion
 
+using System.Text;
+
 namespace Projects
 {
   class Program
   {
     static void Main()
     {
+      Console.OutputEncoding = Encoding.UTF8;
       Console.Write("\n " + Header);
 
+      Console.Write("\n" + ColoredString(ConcatField(Playfield()), "55;255;66"));
     }
 
+    static string ConcatField(string[] playfieldLines) => string.Join("\n", Playfield());
+    static string[] Playfield()
+    {
+      int width = 12,
+          height = 6;
+
+      string[] playfieldLines = new string[height + 1];
+
+      for (int h = 0; h <= height; h++)
+      {
+        string line = " ";
+        for (int w = 0; w <= width; w++)
+        {
+          switch (h)
+          {
+            case 0:
+              line += w == 0 ? pC[0]
+                : w % 12 == 0 ? pC[3]
+                : w % 4 == 0 ? pC[2]
+                : pC[1];
+              break;
+
+            case 1:
+            case 3:
+            case 5:
+              line += w == 0 || w % 12 == 0 ? pC[4]
+                : w % 4 == 0 ? pC[8]
+                : " ";
+              break;
+
+            case 2:
+            case 4:
+              line += w == 0 ? pC[5]
+                : w % 12 == 0 ? pC[6]
+                : w % 4 == 0 ? pC[9]
+                : pC[7];
+              break;
+
+            case 6:
+              line += w == 0 ? pC[10]
+                : w % 12 == 0 ? pC[12]
+                : w % 4 == 0 ? pC[11]
+                : pC[1];
+              break;
+          }
+        }
+        playfieldLines[h] = line;
+      }
+      return playfieldLines;
+    }
+    // 0123456789012
+    // ┌╌╌╌╥╌╌╌╥╌╌╌┐ 0
+    // ╎   ║   ║   ╎ 1
+    // ╞═══╬═══╬═══╡ 2
+    // ╎   ║   ║   ╎ 3
+    // ╞═══╬═══╬═══╡ 4
+    // ╎   ║   ║   ╎ 5
+    // └╌╌╌╨╌╌╌╨╌╌╌┘ 6
+    static char[] PlayfieldChars
+      = ['┌', '╌', '╥', '┐', '┊', '╞', '╡', '═', '║', '╬', '└', '╨', '┘'],
+      pC = PlayfieldChars;
+
+    static char[] Cursor = ['▶', '◀'];
+    // ▶▷▸▹◀◁◂◃
     static string Header
       =>
         ColoredString(" Tic", "40;40;255")
