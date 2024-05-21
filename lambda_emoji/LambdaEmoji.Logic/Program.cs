@@ -46,7 +46,7 @@ namespace Tamagochi
       bool run = true;
       do
       {
-        Console.WriteLine(" " + RedB + " Lambda " + Reset + "\n" + RedF + "  anyone? \n " + Reset);
+        Console.WriteLine(" " + rgbB + " Lambda " + Reset + "\n" + rgbF + "  anyone? \n " + Reset);
         Loop(Health(ref hp));
       } while (run && hp != 0);
     }
@@ -70,29 +70,8 @@ namespace Tamagochi
 
     #region emoji
     static string PointRight => " (☞°ヮ°)☞ ";
-    /// DOES THE SAME AS:
-    /*
-    static string PointRight
-    {
-      get
-      {
-        string pointRight = " (☞°ヮ°)☞ ";
-        return pointRight;
-      }
-    }
-    */
+
     static string PointLeft => " ☜(°ヮ°☜) ";
-    /// DOES THE SAME AS:
-    /*
-    static string PointLeft
-    {
-      get
-      {
-        string pointLeft = " ☜(°ヮ°☜) ";
-        return pointLeft;
-      }
-    }
-    */
     #endregion emoji
 
     #region color by using ANSI ESC SEQUENSES
@@ -110,10 +89,13 @@ namespace Tamagochi
     static string ColorForeground = "38" + Mod;
     static string ColorBackground = "48" + Mod;
     static string Mod => ";2;";
-    static string red => "255;0;0";
+    static string rgb => string.Join(';', r, g, b);
+    static byte r = 255;
+    static byte g = 0;
+    static byte b = 0;
     // By using the following we can now set colors easy:
-    static string RedF = ESC + ColorForeground + red + "m";
-    static string RedB = ESC + ColorBackground + red + "m";
+    static string rgbF = ESC + ColorForeground + rgb + "m";
+    static string rgbB = ESC + ColorBackground + rgb + "m";
     // And resetting them by using:
     static string Reset = ESC + "0m";
     #endregion color
