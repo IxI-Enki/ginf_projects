@@ -29,21 +29,21 @@ static byte Health(ref byte hp) => (byte)(hp-- % 2);
     ColorForeground = "38" + Mod,
     ColorBackground = "48" + Mod;
   static string Mod => ";2;";
-  static string red => string.Join(';', r, g, b);
+  static string rgb => string.Join(';', r, g, b);
   static byte
     r = 255,
     g = 0,
     b = 0;
 // By using the following we can now set colors easy:
   static string
-    RedF = ESC + ColorForeground + red + 'm',
-    RedB = ESC + ColorBackground + red + 'm';
+    rgbF = ESC + ColorForeground + rgb + 'm',
+    rgbB = ESC + ColorBackground + rgb + 'm';
 // And resetting them by using:
   static string Reset = ESC + "0m";
 ```
 > *In use*:
 > ```cs
-> Console.WriteLine(" " + RedB + " Lambda " + Reset + "\n" + RedF + "  anyone? \n " + Reset);
+> Console.WriteLine(" " + rgbB + " Lambda " + Reset + "\n" + rgbF + "  anyone? \n " + Reset);
 > ```
 
 ---  
