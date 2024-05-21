@@ -45,6 +45,7 @@ namespace Emoji
         CalculateColors(out string rgbB, out string Reset, out string rgbF, difference++);
         Console.WriteLine(" " + rgbB + " Lambda " + Reset + "\n" + rgbF + "  anyone? \n " + Reset);
         Loop(Health(ref hp));
+        Console.Clear();
       } while (run && hp != 0);
     }
 
@@ -66,13 +67,13 @@ namespace Emoji
              ColorBackground = "48" + Mod;
       byte r = (byte)(difference * 2),
            g = (byte)(difference * 4),
-           b = 0;                    
+           b = 0;
       string rgb = string.Join(';', r, g, b);
 
       // By using the following we can now set colors easy:
       rgbF = ESC + ColorForeground + rgb + "m";
       rgbB = ESC + ColorBackground + rgb + "m";
-      
+
       // And resetting them by using:
       Reset = ESC + "0m";
     }
