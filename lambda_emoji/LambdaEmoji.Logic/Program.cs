@@ -74,7 +74,7 @@ namespace Tamagochi
       string ColorForeground = "38" + Mod;
       string ColorBackground = "48" + Mod;
       byte r = (byte)(difference *2);
-      byte g = 0;
+      byte g = (byte)(difference * 4);
       byte b = 0;
       string rgb = string.Join(';', r, g, b);
       // By using the following we can now set colors easy:
