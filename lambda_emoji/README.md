@@ -27,9 +27,13 @@ static byte Health(ref byte hp) => (byte)(hp-- % 2);
   static string
     ESC = "\u001b[",
     ColorForeground = "38" + Mod,
-    ColorBackground = "48" + Mod,
-    Mod = ";2;",
-    red = "255;0;0";
+    ColorBackground = "48" + Mod;
+  static string Mod => ";2;";
+  static string red => string.Join(';', r, g, b);
+  static byte
+    r = 255,
+    g = 0,
+    b = 0;
 // By using the following we can now set colors easy:
   static string
     RedF = ESC + ColorForeground + red + 'm',
