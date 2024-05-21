@@ -16,7 +16,3 @@
 
 ![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/4400e063-6202-433f-9e18-052b45441293)   
 
-### Interesting Code Snippets    
-<!--snippet-->
-### Links  
-<!--link-->
