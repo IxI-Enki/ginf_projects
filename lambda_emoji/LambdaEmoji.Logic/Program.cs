@@ -1,4 +1,4 @@
-﻿#region header ( class:  - general information )
+﻿#region header ( class: Program - general information )
 // - This region stores info about the author and the program( version, features,.. )
 /*
  *    ╔══════════════════════╦═══════════════════════════════════════════════════════════════════╗
@@ -7,12 +7,12 @@
  *    ║  Name   │  Jan Ritt  ║ ┃               │ a simple Loop, some Ascii-Escape Sequences    ┃ ║█
  *    ╟─────────┼────────────╢ ┃               │ to color the output, and "fixed" Window-Size  ┃ ║█
  *    ║  Class  │  4 ACIFT   ║ ┠───────────────┼───────────────────────────────────────────────┨ ║█
- *    ╟─────────┼────────────╢ ┃▷ SYNTAX       │ ESC terminates                                ┃ ║█
+ *    ╟─────────┼────────────╢ ┃▷ SYNTAX       │                                               ┃ ║█
  *    ║  Year   │  2024      ║ ┃               │                                               ┃ ║█
  *    ╟─────────┴────────────╢ ┃               │                                               ┃ ║█
  *    ║  Last edit:  4.2024  ║ ┃               │                                               ┃ ║█
  *    ╚══════════════════════╣ ┃  ╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ ┃ ║█
- *      ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀║ ┃ ► VERSION     │ 1.0                                           ┃ ║█
+ *      ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀║ ┃ ► VERSION     │ 1.3                                           ┃ ║█
  *                           ║ ┗━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ ║█
  *    ┏━━━━━━━━━━━━━━━━━┓    ╚═══════════════════════════════════════════════════════════════════╝█
  *    ┃   Development   ┃      ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -32,7 +32,7 @@
 using System.Text;
 #endregion using
 
-namespace Tamagochi
+namespace Emoji
 {
   class Program
   {
@@ -82,8 +82,8 @@ namespace Tamagochi
       rgbB = ESC + ColorBackground + rgb + "m";
       // And resetting them by using:
       Reset = ESC + "0m";
+   
       #endregion color
-
     }
 
     static void Loop(byte side = 0)
