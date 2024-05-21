@@ -1,6 +1,6 @@
 # Lambda Emoji
 
-- Simple demonstration of simple lambda expressions
+- Simple demonstration of simple lambda expressions & ansi sequences to color console output
 - C#  
 
 ---  
