@@ -6,7 +6,7 @@ Ten "easy" C# Programs
 - ✔ [Color Helper](https://github.com/IxI-Enki/ginf_projects/tree/main/color_helper)  
 - ✔ [Tamagochi](https://github.com/IxI-Enki/ginf_projects/tree/main/tamagochi)  
 - ✔ [Game of Life](https://github.com/IxI-Enki/ginf_projects/tree/main/tamagochi)  
-- 📌 [Lambda Emoji](https://github.com/IxI-Enki/ginf_projects/tree/main/lambda_emoji)  
+- ✔ [Lambda Emoji](https://github.com/IxI-Enki/ginf_projects/tree/main/lambda_emoji)  
 - 📌 [Simple Menu]()  
 - 📌 [Simple Box]()  
 - 📌 [Not Simple (OO)]()  
