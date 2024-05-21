@@ -1,5 +1,5 @@
 # ginf_projects
-Ten "easy" C# Programs
+Ten "easy" Programs
 
 - ✔ [Tic Tac Toe](https://github.com/IxI-Enki/ginf_projects/tree/main/tic_tac_toe)  
 - ✔ [Tic Tac Toe Zsh](https://github.com/IxI-Enki/ginf_projects/tree/main/tic_tac_toe_zsh)  
