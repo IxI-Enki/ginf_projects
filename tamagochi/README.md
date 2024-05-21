@@ -3,6 +3,8 @@
 - Simple Functional Tamagochi
 - C#  
 
+Simple Test of Animations, Menus, Boxes ...  
+
 ---  
 ### Screenshots  
 <!--screenshot-->
@@ -12,7 +14,3 @@
 
 ![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/3912d039-a46d-45cd-bef2-0613ae8ef846)  
 
-### Interesting Code Snippets    
-<!--snippet-->
-### Links  
-<!--link-->
