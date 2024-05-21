@@ -17,8 +17,4 @@ Program to calculate RGB-values oand/or HEX-values of colors and generate custom
 ![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/d9f88efb-52b9-4a80-a219-bc299ab993ae)  
 
 ![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/a271a7da-5b0b-4f51-a5dc-e310c9f085fb)  
-
-### Interesting Code Snippets    
-<!--snippet-->
-### Links  
-<!--link-->
+ 
