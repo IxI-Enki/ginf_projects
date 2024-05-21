@@ -8,3 +8,6 @@
 /.vs
 /tic_tac_toe/TicTacToe.Logic/.vs/ProjectEvaluation
 /tic_tac_toe/TicTacToe.Logic/obj/Release/net8.0
+/game_of_life/GoL.Logic/.vs/GoL.Logic
+/game_of_life/GoL.Logic/bin/Debug/net8.0
+/game_of_life/GoL.Logic/obj
