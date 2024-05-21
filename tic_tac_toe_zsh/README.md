@@ -12,10 +12,3 @@
 
 ### TTTc -- COLORFUL alias:
 ![TTTc](https://github.com/IxI-Enki/Uebung-zsh-000/assets/138018029/72a4859d-1cf9-40ee-a6f2-84dd566a9ec1)
-
-
-
-### Interesting Code Snippets    
-<!--snippet-->
-### Links  
-<!--link-->
