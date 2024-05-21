@@ -37,10 +37,10 @@ static byte Health(ref byte hp) => (byte)(hp-- % 2);
 // And resetting them by using:
   static string Reset = ESC + "0m";
 ```
-*In use*:
-```cs
-Console.WriteLine(" " + RedB + " Lambda " + Reset + "\n" + RedF + "  anyone? \n " + Reset);
-```
+> *In use*:
+> ```cs
+> Console.WriteLine(" " + RedB + " Lambda " + Reset + "\n" + RedF + "  anyone? \n " + Reset);
+> ```
 
 ---  
 
