@@ -10,3 +10,4 @@ Ten "easy" C# Programs
 - 📌 [Simple Menu]()  
 - 📌 [Simple Box]()  
 - 📌 [Not Simple (OO)]()  
+- 📌 [Not Simple Two (OO)]()  
