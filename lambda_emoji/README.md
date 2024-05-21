@@ -6,6 +6,14 @@
 ---  
 ### Interesting code parts
 
+*Lambda Function to call Methods*
+```cs
+static void Main() => RunGame();
+
+static byte Health(ref byte hp) => (byte)(hp-- % 2);
+```
+
+*ANSI Esc-Sequences*
 ```cs
 /// The full syntax for coloring a string with ANSI is:
 ///
@@ -16,16 +24,16 @@
 /// m         ... indication of the End of this sequence.
 
 // Divide this Syntax into:
-    static string ESC => "\u001b[";
-    static string ColorForeground => "38" + Mod;
-    static string ColorBackground => "48" + Mod;
-    static string Mod => ";2;";
-    static string red => "255;0;0";
+    static string ESC = "\u001b[";
+    static string ColorForeground = "38" + Mod;
+    static string ColorBackground = "48" + Mod;
+    static string Mod = ";2;";
+    static string red = "255;0;0";
 // By using the following we can now set colors easy:
-    static string RedF => ESC + ColorForeground + red + 'm';
-    static string RedB => ESC + ColorBackground + red + 'm';
+    static string RedF = ESC + ColorForeground + red + 'm';
+    static string RedB = ESC + ColorBackground + red + 'm';
 // And resetting them by using:
-    static string Reset => ESC + "0m";
+    static string Reset = ESC + "0m";
 ```
 *In use*:
 ```cs
