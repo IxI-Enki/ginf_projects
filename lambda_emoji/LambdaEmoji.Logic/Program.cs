@@ -32,7 +32,7 @@
 using System.Text;
 #endregion using
 
-namespace Tamagochi
+namespace Emoji
 {
   class Program
   {
@@ -47,7 +47,7 @@ namespace Tamagochi
       do
       {
         Console.WriteLine(" " + RedB + " Lambda " + Reset + "\n" + RedF + "  anyone? \n " + Reset);
-        Loop((byte)(hp-- % 2));
+        Loop(Health(ref hp));
       } while (run && hp != 0);
     }
 
@@ -65,8 +65,7 @@ namespace Tamagochi
       Console.SetWindowSize(10, 5);
     }
 
-    static string Health(int hp) => new string('+', hp);
-
+    static byte Health(ref byte hp) => (byte)(hp-- % 2);
     #endregion methods
 
     #region emoji
@@ -107,16 +106,16 @@ namespace Tamagochi
     /// m         ... indication of the End of this sequence.
 
     // Divide this Syntax into:
-    static string ESC => "\u001b[";
-    static string ColorForeground => "38" + Mod;
-    static string ColorBackground => "48" + Mod;
-    static string Mod => ";2;";
-    static string red => "255;0;0";
+    static string ESC = "\u001b[";
+    static string ColorForeground = "38" + Mod;
+    static string ColorBackground = "48" + Mod;
+    static string Mod = ";2;";
+    static string red = "255;0;0";
     // By using the following we can now set colors easy:
-    static string RedF => ESC + ColorForeground + red + 'm';
-    static string RedB => ESC + ColorBackground + red + 'm';
+    static string RedF = $"{ESC}{ColorForeground}{red}m";
+    static string RedB = $"{ESC}{ColorBackground}{red}m";
     // And resetting them by using:
-    static string Reset => ESC + "0m";
+    static string Reset = $"{ESC}0m";
     #endregion color
   }
 }
