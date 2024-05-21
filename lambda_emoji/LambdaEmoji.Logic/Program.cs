@@ -48,7 +48,7 @@ namespace Tamagochi
       {
         Console.WriteLine(" " + RedB + " Lambda " + Reset + "\n" + RedF + "  anyone? \n " + Reset);
         Loop((byte)(hp-- % 2));
-      } while (run);
+      } while (run && hp != 0);
     }
 
     static void Loop(byte side = 0)
