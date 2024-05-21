@@ -42,21 +42,55 @@ namespace Tamagochi
     static void RunGame()
     {
       Console.OutputEncoding = Encoding.UTF8;
-      byte hp = 10;
+      byte hp = 100;
       bool run = true;
+      byte difference = 30;
       do
       {
+
+        CalculateColors(out string rgbB, out string Reset, out string rgbF, difference++);
         Console.WriteLine(" " + rgbB + " Lambda " + Reset + "\n" + rgbF + "  anyone? \n " + Reset);
         Loop(Health(ref hp));
       } while (run && hp != 0);
+
+
+    }
+
+    static void CalculateColors(out string rgbB, out string Reset, out string rgbF, byte difference)
+    {
+      #region color by using ANSI ESC SEQUENSES
+
+      /// The full syntax for coloring a string with ANSI is:
+      /// 
+      /// \u001b[   ... tells the program, that a color-specifier is next:
+      /// 38;       ... is the number representing the foreground, and tells the program that an RGB-value follows (other examples: 48 does the same for the background)
+      /// 2;        ... is the default value or "format-mod" (some terminals/consoles support underlined, or even blinking text) 
+      /// x;x;x     ... R-G-B values from 0 to 255, separated by ';'
+      /// m         ... indication of the End of this sequence.
+
+      // Divide this Syntax into:
+      string ESC = "\u001b[";
+      string Mod = ";2;";
+      string ColorForeground = "38" + Mod;
+      string ColorBackground = "48" + Mod;
+      byte r = (byte)(difference *2);
+      byte g = 0;
+      byte b = 0;
+      string rgb = string.Join(';', r, g, b);
+      // By using the following we can now set colors easy:
+      rgbF = ESC + ColorForeground + rgb + "m";
+      rgbB = ESC + ColorBackground + rgb + "m";
+      // And resetting them by using:
+      Reset = ESC + "0m";
+      #endregion color
+
     }
 
     static void Loop(byte side = 0)
     {
       SetScreen();
       Console.WriteLine(side == 0 ? PointLeft : PointRight);
-      Thread.Sleep(1000);
-      Console.Clear();
+      Thread.Sleep(200);
     }
 
     static void SetScreen()
@@ -74,30 +108,6 @@ namespace Tamagochi
     static string PointLeft => " ☜(°ヮ°☜) ";
     #endregion emoji
 
-    #region color by using ANSI ESC SEQUENSES
 
-    /// The full syntax for coloring a string with ANSI is:
-    /// 
-    /// \u001b[   ... tells the program, that a color-specifier is next:
-    /// 38;       ... is the number representing the foreground, and tells the program that an RGB-value follows (other examples: 48 does the same for the background)
-    /// 2;        ... is the default value or "format-mod" (some terminals/consoles support underlined, or even blinking text) 
-    /// x;x;x     ... R-G-B values from 0 to 255, separated by ';'
-    /// m         ... indication of the End of this sequence.
-
-    // Divide this Syntax into:
-    static string ESC = "\u001b[";
-    static string ColorForeground = "38" + Mod;
-    static string ColorBackground = "48" + Mod;
-    static string Mod => ";2;";
-    static string rgb => string.Join(';', r, g, b);
-    static byte r = 255;
-    static byte g = 0;
-    static byte b = 0;
-    // By using the following we can now set colors easy:
-    static string rgbF = ESC + ColorForeground + rgb + "m";
-    static string rgbB = ESC + ColorBackground + rgb + "m";
-    // And resetting them by using:
-    static string Reset = ESC + "0m";
-    #endregion color
   }
 }
