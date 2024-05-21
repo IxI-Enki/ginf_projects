@@ -12,17 +12,12 @@
  *    ╟─────────┴────────────╢ ┃               │                                               ┃ ║█
  *    ║  Last edit:  4.2024  ║ ┃               │                                               ┃ ║█
  *    ╚══════════════════════╣ ┃  ╌╌╌╌╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌ ┃ ║█
- *      ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀║ ┃ ► VERSION     │ 1.3                                           ┃ ║█
+ *      ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀║ ┃ ► VERSION     │ 1.4                                           ┃ ║█
  *                           ║ ┗━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ ║█
  *    ┏━━━━━━━━━━━━━━━━━┓    ╚═══════════════════════════════════════════════════════════════════╝█
  *    ┃   Development   ┃      ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
  *    ┣━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
  *    ┃ ▷ KNOWN ISSUES  │                                                                        ┃█
- *    ┠─────────────────┼────────────────────────────────────────────────────────────────────────┨█
- *    ┃ ▷ NEXT UP       │                                                                        ┃█
- *    ┃    ► _here_     │                                                                        ┃█
- *    ┃  ╌╌╌╌╌╌╌╌╌╌╌╌╌  │ ╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌  ┃█
- *    ┃    ► _here_     │                                                                        ┃█
  *    ┗━━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛█
  *      ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 */
@@ -47,19 +42,15 @@ namespace Emoji
       byte difference = 30;
       do
       {
-
         CalculateColors(out string rgbB, out string Reset, out string rgbF, difference++);
         Console.WriteLine(" " + rgbB + " Lambda " + Reset + "\n" + rgbF + "  anyone? \n " + Reset);
         Loop(Health(ref hp));
       } while (run && hp != 0);
-
-
     }
 
+    #region color by using ANSI ESC SEQUENSES
     static void CalculateColors(out string rgbB, out string Reset, out string rgbF, byte difference)
     {
-      #region color by using ANSI ESC SEQUENSES
-
       /// The full syntax for coloring a string with ANSI is:
       /// 
       /// \u001b[   ... tells the program, that a color-specifier is next:
@@ -69,22 +60,23 @@ namespace Emoji
       /// m         ... indication of the End of this sequence.
 
       // Divide this Syntax into:
-      string ESC = "\u001b[";
-      string Mod = ";2;";
-      string ColorForeground = "38" + Mod;
-      string ColorBackground = "48" + Mod;
-      byte r = (byte)(difference *2);
-      byte g = (byte)(difference * 4);
-      byte b = 0;
+      string ESC = "\u001b[",
+             Mod = ";2;",
+             ColorForeground = "38" + Mod,
+             ColorBackground = "48" + Mod;
+      byte r = (byte)(difference * 2),
+           g = (byte)(difference * 4),
+           b = 0;                    
       string rgb = string.Join(';', r, g, b);
+
       // By using the following we can now set colors easy:
       rgbF = ESC + ColorForeground + rgb + "m";
       rgbB = ESC + ColorBackground + rgb + "m";
+      
       // And resetting them by using:
       Reset = ESC + "0m";
-   
-      #endregion color
     }
+    #endregion color
 
     static void Loop(byte side = 0)
     {
@@ -107,7 +99,5 @@ namespace Emoji
 
     static string PointLeft => " ☜(°ヮ°☜) ";
     #endregion emoji
-
-
   }
 }
