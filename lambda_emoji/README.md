@@ -26,7 +26,10 @@
     static string RedB => ESC + ColorBackground + red + 'm';
 // And resetting them by using:
     static string Reset => ESC + "0m";
-
+```
+*In use*:
+```cs
+Console.WriteLine(" " + RedB + " Lambda " + Reset + "\n" + RedF + "  anyone? \n " + Reset);
 ```
 
 ---  
