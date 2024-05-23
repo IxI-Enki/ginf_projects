@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowManipulation.Logic", "WindowManipulation.Logic.csproj", "{20CC3650-D7EE-44FA-B4C2-4D7D286E3780}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20CC3650-D7EE-44FA-B4C2-4D7D286E3780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20CC3650-D7EE-44FA-B4C2-4D7D286E3780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20CC3650-D7EE-44FA-B4C2-4D7D286E3780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20CC3650-D7EE-44FA-B4C2-4D7D286E3780}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98CAA31F-41A6-486B-A909-4E215288E5F6}
+	EndGlobalSection
+EndGlobal
