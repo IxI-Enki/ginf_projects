@@ -1,5 +1,8 @@
 # ginf_projects
-Ten "easy" Programs
+Ten "easy" Programs  
+
+![summary](https://github.com/IxI-Enki/ginf_projects/assets/138018029/3d149e35-6c9b-4080-b315-9270c32d6892)
+
 
 - ✔ [Tic Tac Toe](https://github.com/IxI-Enki/ginf_projects/tree/main/tic_tac_toe)  
 - ✔ [Tic Tac Toe Zsh](https://github.com/IxI-Enki/ginf_projects/tree/main/tic_tac_toe_zsh)  
