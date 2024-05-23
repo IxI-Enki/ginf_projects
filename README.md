@@ -9,5 +9,5 @@ Ten "easy" Programs
 - ✔ [Lambda Emoji](https://github.com/IxI-Enki/ginf_projects/tree/main/lambda_emoji)  
 - ✔ [Regex Helper](https://github.com/IxI-Enki/ginf_projects/tree/main/regex_helper)  
 - ✔ [Animated Strings](https://github.com/IxI-Enki/ginf_projects/tree/main/animated_strings)  
-- 📌 [Not Simple (OO)]()  
+- 📌 [GUI for Console Apps - Not Simple (OO)](https://github.com/IxI-Enki/xConsole)  
 - 📌 [Not Simple Two (OO)]()  
