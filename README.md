@@ -8,6 +8,6 @@ Ten "easy" Programs
 - ✔ [Game of Life](https://github.com/IxI-Enki/ginf_projects/tree/main/game_of_life)  
 - ✔ [Lambda Emoji](https://github.com/IxI-Enki/ginf_projects/tree/main/lambda_emoji)  
 - ✔ [Regex Helper](https://github.com/IxI-Enki/ginf_projects/tree/main/regex_helper)  
-- 📌 [Simple Box]()  
+- ✔ [Animated Strings](https://github.com/IxI-Enki/ginf_projects/tree/main/animated_strings)  
 - 📌 [Not Simple (OO)]()  
 - 📌 [Not Simple Two (OO)]()  
