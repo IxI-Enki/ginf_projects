@@ -39,4 +39,7 @@
 
 ![1](https://github.com/IxI-Enki/ginf_projects/assets/138018029/e82defea-6e4f-4e16-a617-ef95ac3f5294)  
 
+![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/2f79959c-8b53-446b-8e98-262c3a5785a6)  
+
+
 
