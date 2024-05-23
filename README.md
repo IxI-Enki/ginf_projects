@@ -7,7 +7,7 @@ Ten "easy" Programs
 - ✔ [Tamagochi](https://github.com/IxI-Enki/ginf_projects/tree/main/tamagochi)  
 - ✔ [Game of Life](https://github.com/IxI-Enki/ginf_projects/tree/main/game_of_life)  
 - ✔ [Lambda Emoji](https://github.com/IxI-Enki/ginf_projects/tree/main/lambda_emoji)  
-- 📌 [Simple Menu]()  
+- ✔ [Regex Helper](https://github.com/IxI-Enki/ginf_projects/tree/main/regex_helper)  
 - 📌 [Simple Box]()  
 - 📌 [Not Simple (OO)]()  
 - 📌 [Not Simple Two (OO)]()  
