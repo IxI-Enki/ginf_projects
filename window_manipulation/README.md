@@ -14,8 +14,18 @@
 ![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/6e89d33c-fdca-417d-8288-672bb9ceb86e)
 ![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/3b606333-8a8a-4c3c-ad20-e91965a64bda)
 
+
+
+https://github.com/IxI-Enki/ginf_projects/assets/138018029/98c3e167-93b5-4839-a123-078548673db7
+
+
+
 *Different output Styles possible*  
 ![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/b8fc7cce-db2e-4d3c-8f83-c0c2422f108c)
+
+
+https://github.com/IxI-Enki/ginf_projects/assets/138018029/620ba807-04a0-4480-b370-4330dcf6fc36
+
 
 
 *Ascii Art* 
