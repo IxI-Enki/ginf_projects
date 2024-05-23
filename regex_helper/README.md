@@ -35,11 +35,10 @@
 ---  
 ### Screenshots  
 <!--screenshot-->
-![0](https://github.com/IxI-Enki/ginf_projects/assets/138018029/d4e5c5e1-b039-41f2-87d4-73e342541714)  
 
-![1](https://github.com/IxI-Enki/ginf_projects/assets/138018029/e82defea-6e4f-4e16-a617-ef95ac3f5294)  
+![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/486eed65-1874-4306-91d5-67441b3e0041)  
 
-![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/2f79959c-8b53-446b-8e98-262c3a5785a6)  
+![image](https://github.com/IxI-Enki/ginf_projects/assets/138018029/cae98d58-e7e6-451d-a626-45510e28cb63)  
 
 
 
