@@ -12,7 +12,7 @@ static void PromptUserInput(out int input)
 {
   Console.Write("\n Ganzzahl eingeben: ");
   if (!int.TryParse(Console.ReadLine(), out input))
-    UserInput(out input);
+    PromptUserInput(out input);
   else return;
 }
 ```
