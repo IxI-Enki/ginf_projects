@@ -2,8 +2,15 @@
 
 - Simple Functional Game of Life
 - C#  
-
 ---  
+
+
+
+https://github.com/IxI-Enki/ginf_projects/assets/138018029/75629790-73e9-4b43-882e-9c0b5d072fc0
+
+
+
+---
 
 ```c#
 ///.     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
