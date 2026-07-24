@@ -14,3 +14,9 @@ Ten "easy" Programs
 - ✔ [Animated Strings](https://github.com/IxI-Enki/ginf_projects/tree/main/animated_strings)  
 - 🔎 [GUI for Console Apps - Not Simple (OO)](https://github.com/IxI-Enki/xConsole)  
 - 🔍 [Demonstration of Advanced Strategies - Not Simple](https://github.com/IxI-Enki/ginf_projects/tree/main/window_manipulation)  
+
+---
+
+
+  
+<img src="1.jpeg" alt="pen and paper always the first steps" width="70%">
